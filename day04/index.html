@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body {
+            margin: 0;
+        }
+
+        .shicao {
+            transition: all 500ms;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            /*    width: 500px;*/
+            /*    height: 500px;*/
+            /*    background-color: green;*/
+        }
+
+        .hongde {
+            background-color: red;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        .lvde {
+            background-color: green;
+            height: 1000px;
+            width: 2000px;
+            border-radius: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="shicao hongde" onclick="gaibian()" >
+    <h1>哈哈哈哈哈</h1>
+</div>
+
+
+<script>
+
+    function gaibian() {
+        let element = document.querySelector(".shicao");
+
+        if (element.classList.contains("hongde")) {
+            element.classList.remove("hongde");
+            element.classList.add("lvde")
+        } else {
+            element.classList.remove("lvde");
+            element.classList.add("hongde")
+        }
+        console.log(element.style.backgroundColor);
+    }
+
+    let name = '小明'
+
+    let mylike = ["apple", "work", "money"];
+
+    function shibushioushu(shu) {
+        if (shu % 2 === 0) {
+            console.log("是偶数！！！")
+        } else {
+            console.log("是奇数！！！")
+        }
+    }
+
+    function getDouble(shu) {
+        const jieguo = shu * 2;
+        return jieguo;
+    }
+
+    function sayHello() {
+        console.log("Hello");
+    }
+
+    function getTime() {
+        return new Date();
+    }
+
+
+    shibushioushu(11);
+
+</script>
+</body>
+</html>

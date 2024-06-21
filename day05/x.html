@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="btn1">
+    Count is: {{ count }}
+</button>
+
+<script>
+const btn1= document.querySelector("#btn1");
+
+let count=0;
+function updateCount(){
+    count++;
+    btn1.innerHTML= "Count is: "+count;
+}
+
+btn1.addEventListener("click",updateCount);
+
+</script>
+</body>
+</html>

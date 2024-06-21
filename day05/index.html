@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+
+        }
+
+        .wai {
+            position: absolute;
+            height: 50%;
+            width: 50%;
+            border: 1px solid red;
+            display: flex;
+        }
+
+        .anniu {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            left: 1000px;
+        }
+
+        .anniujia, .anniujian {
+            width: 100px;
+            height: 60px;
+        }
+
+        .qiu {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: #2e82ff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wai">
+
+</div>
+<div class="anniu">
+    <input class="shuru" type="number">
+    <button class="anniujia">增加球</button>
+    <button class="anniujian">删除球</button>
+</div>
+<script>
+
+    let a = document.querySelector(".wai");
+    let b = document.querySelector(".anniujia");
+    let c = document.querySelector(".anniujian");
+    let shuru=document.querySelector(".shuru");
+
+
+    let count=0;
+
+    b.addEventListener("click", jia);
+    c.addEventListener("click", jian);
+
+    function jia() {
+        const value= shuru.value;
+        console.log(value);
+        for (let i = 0; i < value; i++) {
+            const div = document.createElement("div");
+            div.classList.add("qiu");
+            a.appendChild(div);
+        }
+    }
+
+    function jian() {
+        const value= shuru.value;
+        console.log(value);
+        for (let i = 0; i < value; i++) {
+            let d =document.querySelector(".qiu");
+            a.removeChild(d);
+        }
+
+    }
+
+</script>
+</body>
+</html>

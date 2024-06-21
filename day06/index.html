@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+
+        }
+
+        .zhengti {
+            display: flex;
+        }
+
+        .shezhi {
+            background-color: #9b9b9b;
+            width: 30%;
+
+        }
+
+        .dabiaoti {
+            font-size: 50px;
+            margin-left: 30px;
+        }
+
+        .xiaobiaoti {
+            font-size: 25px;
+            margin-left: 30px;
+        }
+
+        .shuru {
+            margin-left: 30px;
+        }
+
+        .youxinzeng {
+            background-color: #2e82ff;
+        }
+
+        #ss {
+            /*display: none;*/
+        }
+
+    </style>
+</head>
+<body>
+<div class="zhengti">
+    <div class="shezhi">
+        <div class="dabiaoti">设置</div>
+        <input class="shuru">
+        <div class="xiaobiaoti" aaa="./b.html">个人资料</div>
+        <div class="xiaobiaoti" aaa="./c.html">外观</div>
+        <div class="xiaobiaoti" aaa="./a.html">隐私</div>
+        <div class="xiaobiaoti">下载</div>
+        <div class="xiaobiaoti">语言</div>
+    </div>
+    <div class="youbian">
+        <iframe id="ss" src=""></iframe>
+
+    </div>
+</div>
+<script>
+    let xiaobiaotis = document.querySelectorAll(".xiaobiaoti");
+
+    for (let xiaobiaoti of xiaobiaotis) {
+        xiaobiaoti.addEventListener("click", changeyoubian);
+    }
+
+console.log(123)
+    function changeyoubian(a) {
+        let b = a.target;
+       const aaa = b.getAttribute("aaa");
+
+        const bb= document.querySelector("#ss");
+
+        bb.src=aaa;
+
+    }
+
+
+</script>
+
+</body>
+</html>

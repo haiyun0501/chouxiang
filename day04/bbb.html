@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .b {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 20px;
+            column-gap: 20px;
+            width: 300px;
+        }
+
+        .a {
+            height: 50px;
+            width: 50px;
+            background-color: #ffa300;
+        }
+
+        .c {
+            background-color: #7300ff;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="b">
+    <div class="a" id="s1" onclick="gaibian('#s1')"></div>
+    <div class="a" id="s2" onclick="gaibian('#s2')"></div>
+    <div class="a" id="s3" onclick="gaibian('#s3')"></div>
+    <div class="a" id="s4" onclick="gaibian('#s4')"></div>
+    <div class="a" id="s5" onclick="gaibian('#s5')"></div>
+    <div class="a" id="s6" onclick="gaibian('#s6')"></div>
+    <div class="a" id="s7" onclick="gaibian('#s7')"></div>
+    <div class="a" id="s8" onclick="gaibian('#s8')"></div>
+    <div class="a" id="s9" onclick="gaibian('#s9')"></div>
+    <div class="a" id="s10" onclick="gaibian('#s10')"></div>
+    <div class="a" id="s11" onclick="gaibian('#s11')"></div>
+    <div class="a" id="s12" onclick="gaibian('#s12')"></div>
+    <div class="a" id="s13" onclick="gaibian('#s13')"></div>
+    <div class="a" id="s14" onclick="gaibian('#s14')"></div>
+    <div class="a" id="s15" onclick="gaibian('#s15')"></div>
+    <div class="a" id="s16" onclick="gaibian('#s16')"></div>
+    <div class="a" id="s17" onclick="gaibian('#s17')"></div>
+    <div class="a" id="s18" onclick="gaibian('#s18')"></div>
+    <div class="a" id="s19" onclick="gaibian('#s19')"></div>
+    <div class="a" id="s20" onclick="gaibian('#s20')"></div>
+</div>
+
+<script>
+
+    function gaibian(id) {
+        let element = document.querySelector(id);
+
+        if (element.classList.contains("c")) {
+            element.classList.remove("c");
+        } else {
+            element.classList.add("c")
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

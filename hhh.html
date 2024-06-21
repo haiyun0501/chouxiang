@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .abc{
+            height: 50px;
+            width: 50px;
+            border: 25px solid red;
+            box-sizing: border-box;
+            border-top-color: green;
+            border-left-color: transparent;
+            border-right-color: green;
+            border-bottom-color: transparent;
+            position: relative;
+        }
+        .hot{
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+<div class="abc">
+    <div class="hot">
+        hot
+    </div>
+</div>
+
+<div style="height: 50px;width: 50px;overflow: hidden">
+    <div style="background: green;height: 100%;width: 200%;display: flex;justify-content: center;align-items: flex-end;transform: rotate(45deg) translateX(-19px) translateY(-7px);">
+        hot
+    </div>
+</div>
+
+</body>
+</html>

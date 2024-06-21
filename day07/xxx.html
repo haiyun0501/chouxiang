@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>果汁狸</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .app {
+            left: 443px;
+            top: 0px;
+            width: 100%;
+            background-color: rgba(247, 247, 247, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            height: 115px;
+            position: relative;
+        }
+
+        .position {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            display: flex;
+            font-size: 16px;
+            column-gap: 10px;
+            font-weight: 600;
+        }
+
+        .logo {
+            position: absolute;
+            right: 0px;
+            top: 10px;
+            display: flex;
+            column-gap: 5px;
+        }
+
+        .img1 {
+            width: 98.11px;
+            height: 52px;
+        }
+
+        .img2 {
+            width: 80px;
+            height: 80px;
+        }
+
+        .search {
+            left: 10px;
+            bottom: 10px;
+            width: calc(100% - 30px);
+            height: 50px;
+            line-height: 23px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255);
+            color: rgba(138, 138, 138, 1);
+            font-size: 16px;
+            text-align: left;
+            box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.4);
+            font-family: Roboto;
+            position: absolute;
+            opacity: 0.9;
+            display: flex;
+            column-gap: 10px;
+            padding-left: 10px;
+            align-items: center;
+        }
+
+        .search-input {
+            height: 100%;
+            width: 100%;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        .content {
+            left: 0px;
+            top: 154px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 1);
+            border-bottom: 1px solid black;
+        }
+
+        .content-item {
+            display: flex;
+            border-top: 1px solid black;
+            height: 70px;
+            align-items: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .preview {
+            margin-left: 10px;
+            margin-right: 10px;
+            height: 60px;
+            width: 60px;
+        }
+
+        .info-title {
+
+            font-size: 16px;
+            font-weight: 600;
+
+        }
+
+        .other-info {
+            position: absolute;
+            right: 50px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <div class="header">
+        <div class="position">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="styles__StyledSVGIconPathComponent-sc-4n1c4t-0 hXuHCJ svg-icon-path-icon fill"
+                 viewBox="0 0 32 32" width="19.67" height="20">
+                <defs></defs>
+                <g>
+                    <path d="M24.4 5.8c-2.2-2.2-5.2-3.8-8.4-3.8s-6.4 1.6-8.6 3.8c-3.4 3.8-4 9.2-2 14 3.6 8 10.6 12.2 10.6 12.2s7-4.2 10.4-12.2c2-4.6 1.6-10.2-2-14zM24.6 19c-2.4 5.6-6.6 9.2-8.6 10.6-2-1.4-6.2-5-8.6-10.6-1.8-4.2-1.2-8.8 1.6-11.8 1.8-2 4.4-3.2 7-3.2s5 1.2 7 3.2c2.8 3 3.4 7.6 1.6 11.8z"></path>
+                    <path d="M16 10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zM16 16c-1.2 0-2-0.8-2-2s0.8-2 2-2 2 0.8 2 2-1 2-2 2z"></path>
+                </g>
+            </svg>
+            <div>
+                长春
+            </div>
+        </div>
+        <div class="logo">
+            <img class="img1" src="./imgs/img1.png" draggable="false" alt="image">
+            <img class="img2" src="./imgs/img2.png" draggable="false" alt="image">
+        </div>
+        <div class="search">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="styles__StyledSVGIconPathComponent-sc-4n1c4t-0 iyoCAB svg-icon-path-icon fill"
+                 viewBox="0 0 32 32" width="20" height="34.83">
+                <defs></defs>
+                <g>
+                    <path d="M31.6 30.2l-7.6-7.6c2-2.4 3.4-5.4 3.4-8.8 0-7.6-6.2-13.6-13.6-13.6s-13.8 6-13.8 13.4c0 7.6 6.2 13.6 13.6 13.6 3.4 0 6.6-1.2 8.8-3.4l7.6 7.6 1.6-1.2zM2 13.6c0-6.4 5.2-11.6 11.6-11.6s11.6 5.2 11.6 11.6-5.2 11.6-11.6 11.6-11.6-5.2-11.6-11.6z"></path>
+                </g>
+            </svg>
+            <input type="text" name="" id="" class="search-input" placeholder="没有分类？输入你想查询的关键字....">
+        </div>
+
+    </div>
+    <div class="content">
+        <div class="content-item">
+            <img src="./imgs/img3.png" alt="" class="preview">
+            <div class="info">
+                <div class="info-title">
+                    日常生活攻略
+                </div>
+                <div class="info-info">
+                    这点事我教你
+                </div>
+            </div>
+            <div class="other-info">
+                999+篇攻略
+            </div>
+            <div style="position: absolute;right: 0">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="styles__StyledSVGIconPathComponent-sc-4n1c4t-0 hXuHCJ svg-icon-path-icon fill"
+                     viewBox="0 0 48 48" width="24" height="24">
+                    <defs></defs>
+                    <g>
+                        <path d="M16 39.5127L31.5563 23.9563C31.5563 23.9563 20.6944 13.0944 16 8.4" stroke="#4E5969"
+                              stroke-width="4"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="content-item">
+            <img src="./imgs/img3.png" alt="" class="preview">
+            <div class="info">
+                <div class="info-title">
+                    日常生活攻略
+                </div>
+                <div class="info-info">
+                    这点事我教你
+                </div>
+            </div>
+            <div class="other-info">
+                999+篇攻略
+            </div>
+            <div style="position: absolute;right: 0">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="styles__StyledSVGIconPathComponent-sc-4n1c4t-0 hXuHCJ svg-icon-path-icon fill"
+                     viewBox="0 0 48 48" width="24" height="24">
+                    <defs></defs>
+                    <g>
+                        <path d="M16 39.5127L31.5563 23.9563C31.5563 23.9563 20.6944 13.0944 16 8.4" stroke="#4E5969"
+                              stroke-width="4"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="content-item">
+            <img src="./imgs/img3.png" alt="" class="preview">
+            <div class="info">
+                <div class="info-title">
+                    日常生活攻略
+                </div>
+                <div class="info-info">
+                    这点事我教你
+                </div>
+            </div>
+            <div class="other-info">
+                999+篇攻略
+            </div>
+            <div style="position: absolute;right: 0">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="styles__StyledSVGIconPathComponent-sc-4n1c4t-0 hXuHCJ svg-icon-path-icon fill"
+                     viewBox="0 0 48 48" width="24" height="24">
+                    <defs></defs>
+                    <g>
+                        <path d="M16 39.5127L31.5563 23.9563C31.5563 23.9563 20.6944 13.0944 16 8.4" stroke="#4E5969"
+                              stroke-width="4"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="content-item">
+            <img src="./imgs/img3.png" alt="" class="preview">
+            <div class="info">
+                <div class="info-title">
+                    日常生活攻略
+                </div>
+                <div class="info-info">
+                    这点事我教你
+                </div>
+            </div>
+            <div class="other-info">
+                999+篇攻略
+            </div>
+            <div style="position: absolute;right: 0">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="styles__StyledSVGIconPathComponent-sc-4n1c4t-0 hXuHCJ svg-icon-path-icon fill"
+                     viewBox="0 0 48 48" width="24" height="24">
+                    <defs></defs>
+                    <g>
+                        <path d="M16 39.5127L31.5563 23.9563C31.5563 23.9563 20.6944 13.0944 16 8.4" stroke="#4E5969"
+                              stroke-width="4"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="content-item">
+            <img src="./imgs/img3.png" alt="" class="preview">
+            <div class="info">
+                <div class="info-title">
+                    日常生活攻略
+                </div>
+                <div class="info-info">
+                    这点事我教你
+                </div>
+            </div>
+            <div class="other-info">
+                999+篇攻略
+            </div>
+            <div style="position: absolute;right: 0">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="styles__StyledSVGIconPathComponent-sc-4n1c4t-0 hXuHCJ svg-icon-path-icon fill"
+                     viewBox="0 0 48 48" width="24" height="24">
+                    <defs></defs>
+                    <g>
+                        <path d="M16 39.5127L31.5563 23.9563C31.5563 23.9563 20.6944 13.0944 16 8.4" stroke="#4E5969"
+                              stroke-width="4"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="content-item">
+            <img src="./imgs/img3.png" alt="" class="preview">
+            <div class="info">
+                <div class="info-title">
+                    日常生活攻略
+                </div>
+                <div class="info-info">
+                    这点事我教你
+                </div>
+            </div>
+            <div class="other-info">
+                999+篇攻略
+            </div>
+            <div style="position: absolute;right: 0">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="styles__StyledSVGIconPathComponent-sc-4n1c4t-0 hXuHCJ svg-icon-path-icon fill"
+                     viewBox="0 0 48 48" width="24" height="24">
+                    <defs></defs>
+                    <g>
+                        <path d="M16 39.5127L31.5563 23.9563C31.5563 23.9563 20.6944 13.0944 16 8.4" stroke="#4E5969"
+                              stroke-width="4"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="content-item">
+            <img src="./imgs/img3.png" alt="" class="preview">
+            <div class="info">
+                <div class="info-title">
+                    日常生活攻略
+                </div>
+                <div class="info-info">
+                    这点事我教你
+                </div>
+            </div>
+            <div class="other-info">
+                999+篇攻略
+            </div>
+            <div style="position: absolute;right: 0">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="styles__StyledSVGIconPathComponent-sc-4n1c4t-0 hXuHCJ svg-icon-path-icon fill"
+                     viewBox="0 0 48 48" width="24" height="24">
+                    <defs></defs>
+                    <g>
+                        <path d="M16 39.5127L31.5563 23.9563C31.5563 23.9563 20.6944 13.0944 16 8.4" stroke="#4E5969"
+                              stroke-width="4"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+
+
+
+    // js 当中 所有东西都是对象
+    let a = 10;
+    const b = "你好";
+
+    let o={
+        name:"赵海云" ,
+        age:24
+    }
+
+    let 我喜欢的东西哦=["钱","还是钱"];
+
+    if (a>5){
+        console.log("a 大于 5")
+    }else{
+        console.log("a 不大于 5")
+    }
+
+    for (let i = 0; i < 10; i++) {
+        console.log("我是第"+i+"次");
+    }
+
+    function hahaha(abc){
+        console.log("我是一个方法");
+        return "666"
+    }
+
+
+    // for (let i = 0; i < 10; i++) {
+    //     打印漂亮的图案()
+    // }
+
+
+    function 打印漂亮的图案(){
+
+        console.log(`%c ______  ___   ___   __  __
+/_____/\\/__/\\ /__/\\ /_/\\/_/\\
+\\:::__\\/\\::\\ \\\\  \\ \\\\ \\ \\ \\ \\
+   /: /  \\::\\/_\\ .\\ \\\\:\\_\\ \\ \\
+  /::/___ \\:: ___::\\ \\\\::::_\\/
+ /_:/____/\\\\: \\ \\\\::\\ \\ \\::\\ \\
+ \\_______\\/ \\__\\/ \\::\\/  \\__\\/
+                               `,"background:rgba(133,108,217,1);color:red");
+        // 打印漂亮的图案();
+    }
+
+
+    let i=0;
+    function hhh(){
+        if (i<10){
+            打印漂亮的图案();
+            i++;
+            hhh();
+        }
+    }
+
+    hhh();
+
+
+</script>
+</body>
+</html>

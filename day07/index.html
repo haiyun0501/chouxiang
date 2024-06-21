@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="9a34feda629f4100f9547061b7d64ae6e15b8d30.jpeg">
+    <title>Title</title>
+</head>
+<body contenteditable="true" id="bbb">
+123123123
+<h1>asxasxasxasxasxasxasx</h1>
+<h2>1212312312313</h2>
+<input type="text" id="i1">
+<script>
+    const bbb = document.querySelector("#bbb");
+
+    setInterval(()=>{
+        localStorage.setItem("abc", bbb.innerHTML);
+    },500);
+
+    //赋值
+    bbb.innerHTML = localStorage.getItem("abc");
+</script>
+</body>
+</html>
