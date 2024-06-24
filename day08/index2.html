@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .kuai {
+            width: 100px;
+            height: 100px;
+            background-color: #2e82ff;
+            transform: translate(0px, 0px);
+        }
+    </style>
+</head>
+<body>
+<div class="kuai"></div>
+<script>
+    //1、.kuai的初始位置,更改transform的translate坐标移动
+    //2、拿到鼠标点击的位置
+    //3、鼠标松开的位置（在整个窗口内）
+
+    let kuai = document.querySelector(".kuai");
+    let shuX = 0;
+    let shuY = 0;
+    let kuaix = 0;
+    let kuaiy = 0;
+
+    kuai.addEventListener("mousedown", (e) => {
+        const a = kuai.getBoundingClientRect();
+        
+    })
+    
+    function yidong() {
+        
+    }
+</script>
+</body>
+</html>

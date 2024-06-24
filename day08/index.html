@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .red {
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+
+        .m{
+            transition: all 200ms ;
+        }
+    </style>
+</head>
+<body>
+<div class="red"></div>
+<script>
+    let red = document.querySelector(".red");
+
+
+    let startLeft = 0;
+    let startTop = 0;
+    let startX = 0;
+    let startY = 0;
+    let startOffsetX = 0;
+    let startOffsetY = 0;
+
+    let moving = false;
+
+    red.addEventListener("mousedown", (e) => {
+        const a = red.getBoundingClientRect();
+        startLeft = a.left
+        startTop = a.top;
+        startX = e.clientX;
+        startY = e.clientY;
+        startOffsetX = startX - startLeft
+        startOffsetY = startY - startTop;
+        document.addEventListener("mousemove", yidong)
+        red.classList.remove("m");
+    });
+
+    document.addEventListener("mouseup", () => {
+        moving = false;
+        document.removeEventListener("mousemove", yidong)
+        red.style.left=0;
+        red.classList.add("m");
+    });
+
+    function yidong(e) {
+        if (!moving && e.clientX > startX - 20 && e.clientX < startX + 20 && e.clientY > startY - 20 && e.clientY < startY + 20) {
+            return
+        }
+        moving = true;
+        console.log("移动了")
+        red.style.left = e.clientX - startOffsetX + "px";
+        red.style.top = e.clientY - startOffsetY + "px";
+    }
+
+</script>
+</body>
+</html>
