@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="daojishi"></h1>
+
+<script>
+const daosjishi=document.querySelector("#daojishi");
+
+let aaa=1000;
+
+function sss(){
+    if (aaa === 0){
+        clearInterval(abc);
+    }
+    daosjishi.innerHTML=aaa;
+    aaa=aaa-1;
+}
+
+//方法一
+let abc= setInterval(sss,10);
+//方法二
+// function sss1(){
+//     sss();
+//     setTimeout(sss1,1000);
+// }
+// sss1()
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input class="shuru" type="text" value="1">
+<h1 class="shuchu">1</h1>
+<h1 class="shuchu">1</h1>
+<input class="shuru" type="text" value="1">
+<script>
+    //1、获取输入的值
+    //2、让输入的值=输出的内容 html
+
+    let shuru = document.querySelectorAll(".shuru");
+    let shuchu = document.querySelectorAll(".shuchu");
+
+    for (let shuruElement of shuru) {
+        shuruElement.addEventListener("input", wenzi)
+    }
+
+
+
+    function wenzi(e) {
+        for (let shuchus of shuchu ) {
+            for (let shurus of shuru) {
+                shurus.value=e.target.value;
+            }
+            shuchus.innerHTML = e.target.value;
+        }
+    }
+
+
+</script>
+</body>
+</html>

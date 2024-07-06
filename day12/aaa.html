@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button class="anniu">点击倒计时</button>
+
+<script>
+    let anniu = document.querySelector(".anniu");
+    let times = 6;
+
+    let djs = null;
+    anniu.addEventListener("click",()=>{
+        anniu.disabled=true;
+        djs = setInterval(time, 1000);
+    });
+
+    function time (){
+        if (times === 0){
+            anniu.disabled=false;
+            anniu.innerHTML ="点击倒计时";
+            clearInterval(djs);
+            times=6;
+        }else{
+            anniu.innerHTML = times + "后重新发送";
+            times -- ;
+        }
+
+    }
+
+
+</script>
+</body>
+</html>

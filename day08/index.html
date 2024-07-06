@@ -17,13 +17,22 @@
             position: absolute;
         }
 
-        .m{
-            transition: all 200ms ;
+        .m {
+            transition: all 200ms;
+        }
+
+        .xian{
+            position: fixed;
+            border-left: 1px solid blue;
+            left: 50%;
+            height: 100%;
+            width: 0;
         }
     </style>
 </head>
 <body>
 <div class="red"></div>
+<div class="xian"></div>
 <script>
     let red = document.querySelector(".red");
 
@@ -37,8 +46,17 @@
 
     let moving = false;
 
+
+    let maxTop = document.documentElement.clientHeight;
+    let maxLeft = document.documentElement.clientWidth;
+
+    let h = 0;
+    let w = 0;
+
     red.addEventListener("mousedown", (e) => {
         const a = red.getBoundingClientRect();
+        h = a.height;
+        w = a.width;
         startLeft = a.left
         startTop = a.top;
         startX = e.clientX;
@@ -49,22 +67,49 @@
         red.classList.remove("m");
     });
 
-    document.addEventListener("mouseup", () => {
+    document.addEventListener("mouseup", (e) => {
         moving = false;
         document.removeEventListener("mousemove", yidong)
-        red.style.left=0;
-        red.classList.add("m");
+        if (e.clientX < maxLeft *0.5) {
+            red.style.left = 0;
+        } else {
+            red.style.left = "unset";
+            red.style.right = 0;
+        }
+        // red.style.left=0;
+        // red.classList.add("m");
     });
 
     function yidong(e) {
         if (!moving && e.clientX > startX - 20 && e.clientX < startX + 20 && e.clientY > startY - 20 && e.clientY < startY + 20) {
             return
         }
+
         moving = true;
         console.log("移动了")
-        red.style.left = e.clientX - startOffsetX + "px";
-        red.style.top = e.clientY - startOffsetY + "px";
+        let l = e.clientX - startOffsetX;
+        let t = e.clientY - startOffsetY;
+
+        if (l < 0) {
+            l = 0;
+        }
+        if (t < 0) {
+            t = 0;
+        }
+        if (l > maxLeft - w) {
+            l = maxLeft - w;
+        }
+        if (t > maxTop - h) {
+            t = maxTop - h;
+        }
+        red.style.left = l + "px";
+        red.style.top = t + "px";
     }
+
+    window.addEventListener("resize",()=>{
+        maxTop = document.documentElement.clientHeight;
+        maxLeft = document.documentElement.clientWidth;
+    })
 
 </script>
 </body>
