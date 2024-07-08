@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .waiceng {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .wai {
+            position: absolute;
+            border: 1px black solid;
+            width: 250px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .pingmu {
+            height: 100px;
+            width: 100%;
+            border: 1px black solid;
+        }
+
+        .jisuanqi {
+            width: 100%;
+            margin-left: 20px;
+
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="waiceng">
+    <div class="wai">
+        <div class="pingmu"></div>
+        <div class="jisuanqi">
+            <button class="baifen">%</button>
+            <button class="qcdq">CE</button>
+            <button class="qc">C</button>
+            <button class="tuige"><img src="tuige.svg"></button>
+            <button class="Xfenyi">1/x</button>
+            <button class="Xpingfang">x²</button>
+            <button class="Xgenhao">²√x</button>
+            <button class="shu" suanfa="/">÷</button>
+            <button class="shu" suanfa="7">7</button>
+            <button class="shu" suanfa="8">8</button>
+            <button class="shu" suanfa="9">9</button>
+            <button class="shu" suanfa="*">×</button>
+            <button class="shu" suanfa="4">4</button>
+            <button class="shu" suanfa="5">5</button>
+            <button class="shu" suanfa="6">6</button>
+            <button class="shu" suanfa="-">－</button>
+            <button class="shu" suanfa="1">1</button>
+            <button class="shu" suanfa="2">2</button>
+            <button class="shu" suanfa="3">3</button>
+            <button class="shu" suanfa="+">＋</button>
+            <button class="zhengfu">±</button>
+            <button class="shu" suanfa="0">0</button>
+            <button class="shu" suanfa=".">.</button>
+            <button class="dengyu">=</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let shu = document.querySelectorAll(".shu");
+    let baifen = document.querySelector(".baifen");
+    let qcdq = document.querySelector(".qcdq");
+    let qc = document.querySelector(".qc");
+    let tuige = document.querySelector(".tuige");
+    let Xfenyi = document.querySelector(".Xfenyi");
+    let Xpingfang = document.querySelector(".Xpingfang");
+    let Xgenhao = document.querySelector(".Xgenhao");
+    let zhengfu = document.querySelector(".zhengfu");
+    let dengyu = document.querySelector(".dengyu");
+    let pingmu = document.querySelector(".pingmu");
+
+
+    for (let shuElement of shu) {
+        shuElement.addEventListener("click", xianshi);
+    }
+    dengyu.addEventListener("click", yunsuan);
+
+    let nowValue = "";
+
+    function shuaxin() {
+        pingmu.innerHTML = nowValue;
+    }
+
+    function xianshi(i) {
+        let b = i.target.getAttribute("suanfa");
+        nowValue = nowValue + b;
+        shuaxin()
+    }
+
+    function yunsuan() {
+        console.log(nowValue)
+        let s = eval(nowValue);
+        nowValue = s;
+        shuaxin()
+    }
+
+    qc.addEventListener("click", qingchu);
+
+    function qingchu() {
+        nowValue = "";
+        shuaxin()
+    }
+
+    const aaa = [];
+
+    for (let shuElement of shu) {
+        aaa.push(shuElement.getAttribute("suanfa"))
+    }
+    console.log(aaa)
+
+    document.addEventListener("keydown", (e) => {
+        if (aaa.includes(e.key)) {
+            nowValue = nowValue + e.key;
+            shuaxin()
+        } else if (e.key == "=") {
+            yunsuan();
+        }
+
+    });
+
+
+</script>
+</body>
+</html>
