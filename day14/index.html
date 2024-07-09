@@ -50,7 +50,7 @@
     <div class="wai">
         <div class="pingmu"></div>
         <div class="jisuanqi">
-            <button class="baifen">%</button>
+            <button class="baifen" >%</button>
             <button class="qcdq">CE</button>
             <button class="qc">C</button>
             <button class="tuige"><img src="tuige.svg"></button>
@@ -96,9 +96,17 @@
         shuElement.addEventListener("click", xianshi);
     }
     dengyu.addEventListener("click", yunsuan);
+    qc.addEventListener("click", qingchu);
+    baifen.addEventListener("click",baifenbi);
+    //%:x*100
+    //获取的数，点一下，实现X*100
+    Xfenyi.addEventListener("click",X1);
+    Xpingfang.addEventListener("click",xpf);
+    Xgenhao.addEventListener("click",xgh);
+    zhengfu.addEventListener("click",zf);
+    tuige.addEventListener("click",tg);
 
     let nowValue = "";
-
     function shuaxin() {
         pingmu.innerHTML = nowValue;
     }
@@ -115,8 +123,6 @@
         nowValue = s;
         shuaxin()
     }
-
-    qc.addEventListener("click", qingchu);
 
     function qingchu() {
         nowValue = "";
@@ -140,6 +146,47 @@
 
     });
 
+    function baifenbi(){
+        let c =eval(nowValue);
+        let d=c*100;
+        nowValue =d;
+        shuaxin()
+    }
+
+    function X1(){
+        let c =eval(nowValue);
+        let d=1/c;
+        nowValue=d;
+        shuaxin()
+    }
+
+    function xpf(){
+        let c =eval(nowValue);
+        let d=c*c;
+        nowValue=d;
+        shuaxin()
+    }
+
+    function xgh(){
+        let c =eval(nowValue);
+        let d=Math.sqrt(c);
+        nowValue=d;
+        shuaxin()
+    }
+
+    function zf(){
+        let c =eval(nowValue);
+        let d=c*-1;
+        nowValue=d;
+        shuaxin()
+    }
+
+    function tg(){
+       let a = nowValue.length;
+       let b = nowValue.substring(0,a-1);
+       nowValue = b;
+       shuaxin()
+    }
 
 </script>
 </body>

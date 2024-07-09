@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .wai {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .conter {
+            margin: 30px;
+        }
+
+        .latiao {
+            width: 500px;
+        }
+
+        .kuang {
+            position: relative;
+            border: 2px #ff4b68 solid;
+            width: 500px;
+            height: 50%;
+        }
+
+        .qiu {
+            position: absolute;
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="wai">
+    <div class="conter">
+        <input class="latiao" type="range" min="0" max="100" value="1">
+        <button class="star">点击开始移动球</button>
+    </div>
+    <div class="kuang">
+        <div class="qiu"></div>
+    </div>
+</div>
+
+<script>
+    let kuang = document.querySelector(".kuang");
+    let latiao = document.querySelector(".latiao");
+    let qiu = document.querySelector(".qiu");
+    let star = document.querySelector(".star");
+
+    star.addEventListener("click", () => {
+        isstop = !isstop;
+        dongqiu()
+    });
+    latiao.addEventListener("input", () => {
+        sudu = latiao.value;
+    })
+
+    let qiuxzb = 0;
+
+    let kuangkuan = 300;
+
+    let fangxiang = 1;
+
+    let sudu = latiao.value;
+
+    let isstop = true;
+
+    function dongqiu() {
+        qiuxzb = qiuxzb + (sudu * fangxiang);
+        if (qiuxzb > 400) {
+            fangxiang = -1;
+            qiuxzb = 400;
+        } else if (qiuxzb < 0) {
+            fangxiang = 1;
+            qiuxzb = 0;
+        }
+
+        qiu.style.left = qiuxzb + "px";
+        requestAnimationFrame(
+            dongqiu
+        )
+    }
+
+</script>
+</body>
+</html>
